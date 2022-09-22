@@ -20,7 +20,20 @@
     console.log(Window.hola);
     //ambito de bloque
 
+
     var musica="Rock";
-    console.log("Variable Musica antes del bloque",musica)
-    //Esto es un bloque -coemntario de una linea
+    //Se imprime la variable 'Rock'
+    console.log("Variable Musica antes del bloque",musica);
+    
+
+   /*Esto es un bloque*/ { 
+        var musica = "Pop";
+        //Se imprime la variable 'Pop'
+        console.log("Variable Musica dentro del bloque",musica);
+       
+    }
+    //Se imprime la variable 'Pop'
+    console.log("Variable Musica despues del bloque",musica);
+
+
 </script>
