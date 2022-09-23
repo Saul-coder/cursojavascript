@@ -18,9 +18,11 @@
     console.log(hello);
     console.log(Window);
     console.log(Window.hola);
+
+    console.log('***************VAR***************************');
     //ambito de bloque
 
-
+//La palabra reservada 'VAR' no respeta la variable. Deberia de imprimir 'Rock,Pop, Rock' y no, imprime 'Rock, Pop, Pop'
     var musica="Rock";
     //Se imprime la variable 'Rock'
     console.log("Variable Musica antes del bloque",musica);
@@ -34,6 +36,23 @@
     }
     //Se imprime la variable 'Pop'
     console.log("Variable Musica despues del bloque",musica);
+
+
+console.log('***************LET***************************');
+    //La palabra reservada 'LET' si respeta la variable. Imprime 'Rock, Pop, Rock'
+    let musica2="Rock";
+        //Se imprime la variable 'Rock'
+        console.log("Variable Musica antes del bloque",musica2);
+        
+
+    /*Esto es un bloque*/ { 
+            let musica2 = "Pop";
+            //Se imprime la variable 'Pop'
+            console.log("Variable Musica dentro del bloque",musica2);
+        
+        }
+        //Se imprime la variable 'Pop'
+        console.log("Variable Musica despues del bloque",musica2);
 
 
 </script>
