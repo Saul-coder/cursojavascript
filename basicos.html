@@ -69,6 +69,59 @@ console.log('***************LET***************************');
                     lorem.includes("lorem"),lorem.includes("saul"),
                     lorem.trim());
 
+        //Interpolcion de variables
+        
+        console.log("********************INTERPOLCION DE VARIABLES*****************");
+        let Nombre="Antonio";
+        let Apellido="Cervantes"
+        //Tenemos que utilizar las comillas invertidas para que podamos usar la interplcion
+        let nombre2 =`Hola mi nombre es ${nombre} ${apellido}`
+        console.log(nombre2);
+        
+        //Template String
+        //Para hacer uso de las template String lo podemos utilizar con las comillas invertidas
+        //Sin comillas invertidas
+        let ul ="<ul><li>PRIMAVERA</li><li>VERANO</li><li>OTOÑO</li><li>INVIERNO</li></ul>";
+        console.log(ul);
+        //Con comillas. Permite estructurar como lo es en HTML
+        let ul2=`<ul>
+        <li>PTIMAVERA</li>
+        <li>VERANO</li>
+        <li>OTOÑO</li>
+        <li>INVIERNO</li>
+        </ul>`
+        console.log(ul2);
 
+        //Numeros
+        console.log("***********NUMEROS**************");
+        let a=7.19;
+        //El metodo 'ToFixed' permite asignarle cuantos decimales puede tener un numero decimal
+        console.log(a.toFixed(1));
+        //El metodo 'ParseInt' permite solo transformar el decimal a numero entero
+        console.log(parseInt(a));
+
+
+        console.log("**********BOOLEANOS************");
+        //conceptos 'VERDADEROS' o 'TRUE'
+        console.log(Boolean(true));
+        console.log(Boolean({}));
+        console.log(Boolean([]));
+        console.log(Boolean(42));
+        console.log(Boolean("foo"));
+        console.log(Boolean(new Date()));
+        console.log(Boolean(-42));
+        console.log(Boolean(3.14));
+        console.log(Boolean(-3.14));
+        console.log(Boolean(Infinity));
+        console.log(Boolean(-Infinity));
+        //Conceptos 'Falsos' o 'False'
+        console.log(Boolean(false));
+        console.log(Boolean(null));
+        console.log(Boolean(undefined));
+        console.log(Boolean(0));
+        console.log(Boolean(NaN));
+        console.log(Boolean(''));
+        console.log(Boolean(""));
+        console.log(Boolean(document.all));
 
 </script>
