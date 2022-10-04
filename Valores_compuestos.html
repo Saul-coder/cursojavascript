@@ -15,8 +15,34 @@
             console.log("Dos");
             console.log("Tres");
         }
+
+        function devuelvevalorfuncion(){
+            console.log("Uno");
+            return 19;
+            console.log("Dos");
+            console.log("Tres");
+            return "La funcion ha retornado una cadena de text";
+        }
         //Invocacion de funcion
-        funcion();
+        //funcion();
+
+        //let valordefuncion = devuelvevalorfuncion();
+        //console.log(valordefuncion);
+
+        //funciones declardas VS funciones expresadas
+
+        //Esto es una funcion declarada
+        funciondeclarada();
+        function funciondeclarada(){
+            console.log("Esto es una funcion declarada, puede invocarse en cualquier parte del codigo, incluso antes de que la funcion sea declarada");
+        }
+        funciondeclarada();
+        //Esto es una funcion expresada o funcion anonima
+        const funcionExpresada = function(){
+            console.log("Esto es una funcion expresada es decir, una funcion que se le ha asignado como valor a una variable, si invocamos esta funcion antes de su definicion JS nos dira 'can't access lexical declaration 'funcionExpresada' before initialization'");
+        }
+
+        funcionExpresada();
         console.log("**************OBJETOS***************");
     </script>
 </body>
