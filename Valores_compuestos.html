@@ -44,6 +44,75 @@
 
         funcionExpresada();
         console.log("**************OBJETOS***************");
+
+        const b={};
+        console.log(b);
+
+        const c=new Object();
+        console.log(c);
+        /*Dentro de un objeto a las variables se le llamam atributos/propiedades y a las funciones se les llama metodos */
+        const saul={
+            nombre:"saul",
+            apellido:"rojas",
+            edad:25,
+            pasatiempos:["escuchar musica","hacer ejercicio","dormir"],
+            soltero:false,
+            contacto:{
+                email:"correo@correo.com",
+                twitter:false,
+                movil:"0123456789"
+            },
+            saludar:function(){
+                console.log("Hola :)");
+            },
+            decirnombre:function(){
+                console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad}`);
+            }
+        }
+
+        console.log(saul["nombre"]);
+        console.log(saul.apellido);
+        console.log(saul.pasatiempos[1]);
+        console.log(saul.contacto);
+        console.log(saul.contacto.movil);
+        saul.saludar();
+        saul.decirnombre();
+
+        console.log(Object.keys(saul));
+        console.log(Object.values(saul));
+        console.log(saul.hasOwnProperty("telefono"));
+
+        console.log("**********TIPOS DE OPERADORES***********");
+        //Aritmeticos
+        //+,-,*,%,'()'
+
+        //Operadores de comparacion
+        //>,<,>=,<=,=,==,===,!=,!==,!===
+
+        /*
+        1.- '=' un signo igual es de asignacion de variable
+        2.- '==' doble signo igual es de comparacion de valores
+        3.- '===' triple signo igual es de comparacion de tipo de dato y de valor
+        */
+       // 1.-
+       let num=7;
+       //2.-
+        console.log(7==7);
+        console.log("7"==7);
+        console.log(0==false);
+        //3.-
+        console.log(7===7);
+        console.log("7"===7);
+        console.log(0===false);
+
+        console.log("*******CONDICIONAL***********");
+        /*Operador Ternario (Condicion) '?'=verdadero, ':'=falsa*/
+        let edad=17;
+        console.log("Operador ternario");
+        let eresMayor=(edad>=18)
+        ?"Eres mayor de edad"
+        :"Eres menor de edad";
+        console.log(eresMayor);
     </script>
 </body>
 </html>
