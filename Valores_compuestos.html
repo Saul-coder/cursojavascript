@@ -129,6 +129,197 @@
         for(const caracter of cadena){
             console.log(caracter);
         }
+
+
+        console.log("************Manejo de errores***********");
+        try {
+            console.log("En el try se  agrega el codigo agregar");
+            noExiste;
+            console.log("Segundo mensaje en el try");
+        } catch (error) {
+            console.log("Captura cualquier error surgido o lanzado en el try");
+            console.log(error);
+        }finally{
+            console.log("En el bloque finally se ejecutara siempre al final de un bloque try-catch");
+        }
+
+        //Error personalizado
+        try {
+            let numero = "y";
+            if (isNaN(numero)) {
+                throw new Error("El caracter introducido no es un numero");
+            }
+            console.log(numero*numero);
+        } catch (error) {
+            console.log(`Se produjo el siguiente error: ${error}`);
+        }
+
+        console.log("***********Break & Continues*************");
+
+        const numeros=[1,2,3,4,5,6,7,8,9,0];
+        console.log("**Uso de Break**");
+        //Uso del break
+        for(let i=0; i<numeros.length;i++){
+            if(i===5){
+                break;
+            }
+            console.log(numeros[i]);
+        }
+        console.log("**Uso de Continues**");
+        //Uso de continues
+        for(let i=0; i<numeros.length;i++){
+            if(i===5){
+                //En este caso, el continues omite la poscision en el que se uso la condicion if, 
+                //rompe el ciclo pero en vez de detenerse, 
+                //salta la posicion y sigue con el ciclo hasta terminarla. 
+                continue;
+            }
+            console.log(numeros[i]);
+        }
+
+        console.log("*******Destructuracion**********");
+        //Sin destructuracion
+        const Num=[1,2,3];
+
+        let uno= Num[0],
+            dos=Num[1],
+            tres=Num[2];
+        console.log(uno,dos,tres);
+
+        //Con destructuracion
+        const [one, two, tree]=Num;
+        console.log(one,two,tree);
+
+
+        let Per={
+            nombre:"Saul",
+            apellido:"Rojas",
+            Edad:25
+        }
+
+        let {nombre, apellido, Edad} = Per;
+        console.log(nombre, apellido, Edad);
+
+
+        console.log("**************Objetos literales*****************");
+
+        let NOMBRE = "Saul",
+            EDAD=25;
+
+        const humano = {
+            Nombre:NOMBRE,
+            Edad:EDAD,
+            saludo: function(){
+                console.log("Hola mundo!");
+            }
+        }
+        console.log(humano);
+        const HUMANO = {
+            NOMBRE,
+            EDAD,
+            altura:1.69,
+            SegSaludo(){
+                console.log("Javascript");
+            }
+        }
+
+        console.log(HUMANO);
+        HUMANO.SegSaludo();
+
+        console.log("************PARAMETROS REST & OPERADOR SPREAD ******************");
+        //Parametros REST
+        function sumar (a, b,...c){
+            let resultado = a+b;
+            c.forEach(function(n){
+                resultado += n
+            });
+
+            return resultado;
+        }
+
+        console.log(sumar(1,2));
+        console.log(sumar(1,2,3));
+        console.log(sumar(1,2,3,4));
+        console.log(sumar(1,2,3,4,5));
+        console.log(sumar(1,2,3,4,5,6));
+
+        //Operador spread
+        const arr1=[1,2,3,4,5];
+        const arr2=[6,7,8,9,0]
+
+        console.log(arr1,arr2);
+        //Sin operador spread
+        var arr3 = [arr1,arr2];
+        console.log(arr3);
+        //Con operador spread
+        var arr3 = [...arr1,...arr2];
+        console.log(arr3);
+
+        console.log("*****ARROW FUNCTION*****");
+        //Sin el arrow function
+        var Saludo = function(){
+            console.log(`Hola`);
+        }
+        //Con arrow function
+        var Saludo =()=>{
+            console.log(`Hola`);
+        }
+        //Con Arrow function cuando solo tiene una linea de codigo 
+        var Saludo =()=>console.log(`Hola`);
+        var Saludo =(nombre)=>console.log(`Hola ${nombre}`);
+        
+        
+        //Impresion de la function
+        Saludo("Saul");
+
+
+        var SUMAR = function(d,e){
+            return d+e;
+        }
+        //Con Arrow function
+        var SUMAR2 = (d,e)=>d+e;
+        
+        console.log(SUMAR(7,8));
+        console.log(SUMAR2(4,8));
+
+        const funcionDeVariasLineas = () =>{
+            console.log("Uno");
+            console.log("Dos");
+            console.log("Tres");
+        }
+        funcionDeVariasLineas();
+
+        const NuM=[1,2,3,4,5];
+        NuM.forEach((el,index)=>{
+            console.log(`${el} esta en la posicion ${index}`);
+        })
+
+        function perro(){
+            console.log(this);
+        }
+
+        perro();
+
+        //Utilizar siempre la palabra function en un objetos con sus propiedades
+        var Perro1 = {
+            nombre:"kenai",
+            ladrar:function(){
+                console.log(this);
+            }
+        }
+        //Nunca utilizar las arrow function en los objetos
+        var Perro2 = {
+            nombre:"kenai",
+            ladrar:()=>{
+                console.log(this);
+            }
+        }
+        
+
+
+        Perro1.ladrar();
+        Perro2.ladrar();
+
     </script>
 </body>
 </html>
