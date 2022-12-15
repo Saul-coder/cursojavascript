@@ -320,6 +320,46 @@
         Perro1.ladrar();
         Perro2.ladrar();
 
+        //POO
+        /*
+        CLASES - MODELOS A SEGUIR
+        OBJETOS - ES UNA INSTANCIA DE UNA CLASE
+        ATRIBUTOS - ES UNA CARACTERISTICA O PROPIEDAD DEL OBJETO (SON VARIABLES DENTRO DE UN OBJETO)
+        METODOS - SON LAS ACCIONES QUE UN OBJETO PUEDE REALIZAR(SON FUNCIONES DENTRO DE UN OBJETO)
+        */
+
+        const animal ={
+            nombre:"Snoopy",
+            sonar(){
+                console.log("Hago sonido porque estoy vivo");
+            }
+        }
+        const animal2 ={
+            nombre:"Lola bunny",
+            sonar(){
+                console.log("Hago sonido porque estoy vivo");
+            }
+        }
+
+        console.log(animal);
+        console.log(animal2 );
+
+        //FUNCION CONSTRUCTORA
+        function Animal(nombre, genero){
+            //ATRIBUTOS
+            this.nombre = nombre;
+            this.genero = genero;
+            //METODOS
+            this.sonar = function(){
+                console.log("Hago sonido porque estoy vivo");
+            }
+        }
+
+        const snoopy = new Animal("Perro", "Macho"),
+        lolaBunny = new Animal("Lola Bunny","Hembra");
+
+        console.log(snoopy);
+        console.log(lolaBunny);
     </script>
 </body>
 </html>
