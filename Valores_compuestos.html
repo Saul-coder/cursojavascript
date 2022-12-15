@@ -344,7 +344,7 @@
         console.log(animal);
         console.log(animal2 );
 
-        //FUNCION CONSTRUCTORA
+        //FUNCION CONSTRUCTORA DONDE ASIGNAMOS LOS METODOS AL PROTOTIPO , NO A LA FUNCION COMO TAL
         function Animal(nombre, genero){
             //ATRIBUTOS
             this.nombre = nombre;
@@ -353,6 +353,9 @@
             this.sonar = function(){
                 console.log("Hago sonido porque estoy vivo");
             }
+            this.saludar = function(){
+                console.log(`Hola me llamo ${this.nombre}`);
+            }
         }
 
         const snoopy = new Animal("Perro", "Macho"),
@@ -360,6 +363,10 @@
 
         console.log(snoopy);
         console.log(lolaBunny);
+
+        snoopy.sonar();
+        snoopy.saludar();
+        
     </script>
 </body>
 </html>
